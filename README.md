@@ -9,7 +9,7 @@ David Domínguez
 
 Yenni Lopez
 
-Samuel Pantaleon
+Samuel Martínez 
 
 Nota de entrega: la consigna recibida indica equipos de dos; el equipo debe confirmar con el docente la participación de tres integrantes antes de entregar.
 
