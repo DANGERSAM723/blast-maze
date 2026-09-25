@@ -1,0 +1,146 @@
+[
+    {
+        "id": "1790145395907-fde160eba3dc7",
+        "puntuacion": 1500,
+        "nivelMaximo": 2,
+        "enemigosEliminados": 4,
+        "duracionSegundos": 94,
+        "mayorReaccionCadena": 2,
+        "fecha": "2026-09-23T06:36:35.907Z"
+    },
+    {
+        "id": "1790172669175-1c5bfdd13afe",
+        "puntuacion": 600,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 2,
+        "duracionSegundos": 62,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T14:11:09.175Z"
+    },
+    {
+        "id": "1790173246309-4f8f3b5c6bad78",
+        "puntuacion": 9700,
+        "nivelMaximo": 5,
+        "enemigosEliminados": 19,
+        "duracionSegundos": 484,
+        "mayorReaccionCadena": 4,
+        "fecha": "2026-09-23T14:20:46.309Z"
+    },
+    {
+        "id": "1790173991744-1bbbbc90dea7c8",
+        "puntuacion": 0,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 0,
+        "duracionSegundos": 63,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T14:33:11.744Z"
+    },
+    {
+        "id": "1790182883247-d8daeb19dc8d9",
+        "puntuacion": 0,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 0,
+        "duracionSegundos": 47,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T17:01:23.247Z"
+    },
+    {
+        "id": "1790182924595-163cfdaabb9748",
+        "puntuacion": 600,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 2,
+        "duracionSegundos": 33,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T17:02:04.595Z"
+    },
+    {
+        "id": "1790183852372-fadf926873c758",
+        "puntuacion": 500,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 2,
+        "duracionSegundos": 59,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T17:17:32.372Z"
+    },
+    {
+        "id": "1790183895554-b6a860b496f27",
+        "puntuacion": 0,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 0,
+        "duracionSegundos": 31,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T17:18:15.554Z"
+    },
+    {
+        "id": "1790184078934-3ca670e1a3485",
+        "puntuacion": 3900,
+        "nivelMaximo": 2,
+        "enemigosEliminados": 13,
+        "duracionSegundos": 173,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T17:21:18.934Z"
+    },
+    {
+        "id": "1790184547496-056fd11ec3088",
+        "puntuacion": 1800,
+        "nivelMaximo": 2,
+        "enemigosEliminados": 6,
+        "duracionSegundos": 94,
+        "mayorReaccionCadena": 4,
+        "fecha": "2026-09-23T17:29:07.496Z"
+    },
+    {
+        "id": "1790185068667-cd89e1e880b9e",
+        "puntuacion": 3400,
+        "nivelMaximo": 2,
+        "enemigosEliminados": 11,
+        "duracionSegundos": 268,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T17:37:48.667Z"
+    },
+    {
+        "id": "1790186055747-14d1ddb86f1218",
+        "puntuacion": 0,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 0,
+        "duracionSegundos": 27,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T17:54:15.747Z"
+    },
+    {
+        "id": "1790186209016-be53c0ce172068",
+        "puntuacion": 500,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 2,
+        "duracionSegundos": 48,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-23T17:56:49.016Z"
+    },
+    {
+        "id": "1790226469412-2fdeaf0ab9ce2",
+        "puntuacion": 1200,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 4,
+        "duracionSegundos": 107,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-24T05:07:49.412Z"
+    },
+    {
+        "id": "1790226718069-4e5107bfb84168",
+        "puntuacion": 1500,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 6,
+        "duracionSegundos": 120,
+        "mayorReaccionCadena": 2,
+        "fecha": "2026-09-24T05:11:58.069Z"
+    },
+    {
+        "id": "1790228346756-d3e6e764d2fe08",
+        "puntuacion": 300,
+        "nivelMaximo": 1,
+        "enemigosEliminados": 1,
+        "duracionSegundos": 53,
+        "mayorReaccionCadena": 0,
+        "fecha": "2026-09-24T05:39:06.756Z"
+    }
+]

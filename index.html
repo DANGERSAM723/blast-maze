@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blast Maze: Arena Bomber</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="contenedor-juego">
+        <h1>Blast Maze</h1>
+
+        <section class="hud">
+            <span>Nivel: <strong id="nivel">1</strong></span>
+            <span>Vidas: <strong id="vidas">3</strong></span>
+            <span>Puntos: <strong id="puntos">0</strong></span>
+            <span>Tiempo: <strong id="tiempo">120</strong></span>
+        </section>
+
+        <!-- INVENTARIO DE POWER-UPS -->
+        <aside id="inventarioPowerups" class="inventario-powerups" aria-live="polite">
+            <h2>Power-ups</h2>
+            <ul>
+                <li class="tipo-bomba"><span>Bombas</span><strong id="inventarioBombas">+0</strong></li>
+                <li class="tipo-alcance"><span>Alcance</span><strong id="inventarioAlcance">+0</strong></li>
+                <li class="tipo-velocidad"><span>Velocidad</span><strong id="inventarioVelocidad">+0</strong></li>
+                <li class="tipo-vida"><span>Vidas</span><strong id="inventarioVidas">3</strong></li>
+                <li class="tipo-escudo"><span>Escudos</span><strong id="inventarioEscudos">0</strong></li>
+                <li class="tipo-fase"><span>Fantasma</span><strong id="inventarioFase">OFF</strong></li>
+                <li class="tipo-remota"><span>Remotas</span><strong id="inventarioRemotas">0</strong></li>
+                <li class="tipo-especial"><span>Especiales</span><strong id="inventarioEspeciales">0</strong></li>
+            </ul>
+        </aside>
+
+        <canvas id="gameCanvas" width="720" height="528" tabindex="0">
+            Tu navegador no permite utilizar Canvas.
+        </canvas>
+
+        <p id="mensaje" class="mensaje">Presiona comenzar para iniciar.</p>
+
+        <!-- MENÚ INICIAL -->
+        <section id="menuInicio" class="pantalla">
+            <div class="panel-menu">
+                <h2>Blast Maze</h2>
+                <h3>Arena Bomber</h3>
+                <p>Destruye los bloques, elimina a los enemigos y encuentra la salida.</p>
+
+                <div class="controles">
+                    <h3>Controles</h3>
+                    <p><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> o flechas: moverse</p>
+                    <p><kbd>Espacio</kbd> Colocar bomba</p>
+                    <p><kbd>Q</kbd> Colocar bomba especial</p>
+                    <p><kbd>E</kbd> Activar detonación remota</p>
+                    <p><kbd>F3</kbd> Activar o desactivar Modo Debug</p>
+                    <p><kbd>P</kbd> Pausar el juego</p>
+                    <p><kbd>R</kbd> Reiniciar al terminar</p>
+                    <p><kbd>M</kbd> Activar o silenciar audio</p>
+                </div>
+
+                <div class="grupo-botones">
+                    <button id="botonComenzar" type="button">Comenzar partida</button>
+                    <button id="botonInformacion" class="boton-secundario" type="button">
+                        Instrucciones y créditos
+                    </button>
+                    <button id="botonResultados" class="boton-secundario" type="button">
+                        Resultados y estadísticas
+                    </button>
+                    <button id="botonAudio" class="boton-secundario" type="button">🔊 Audio</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTRUCCIONES Y CRÉDITOS -->
+        <section id="pantallaInformacion" class="pantalla oculto">
+            <div class="panel-menu panel-informacion">
+                <h2>Instrucciones</h2>
+
+                <div class="informacion-grid">
+                    <article class="tarjeta-info">
+                        <h3>Objetivo</h3>
+                        <p>
+                            Destruye los bloques, elimina a todos los enemigos y encuentra
+                            la salida oculta para avanzar al siguiente nivel.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta-info">
+                        <h3>Movimiento</h3>
+                        <p>
+                            Utiliza <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+                            o las flechas del teclado para recorrer el escenario.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta-info">
+                        <h3>Bombas</h3>
+                        <p>
+                            Presiona <kbd>Espacio</kbd> para colocar una bomba. Aléjate antes
+                            de la explosión y utiliza el fuego para destruir obstáculos.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta-info">
+                        <h3>Potenciadores</h3>
+                        <p>
+                            Recoge los objetos que aparecen al destruir bloques para obtener
+                            más bombas, mayor alcance, velocidad, escudos, modo fantasma,
+                            detonaciones remotas, bombas especiales o vidas adicionales.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta-info">
+                        <h3>Enemigos</h3>
+                        <p>
+                            Cada enemigo tiene un comportamiento diferente. Evita el contacto
+                            directo y derrótalos utilizando las explosiones.
+                        </p>
+                    </article>
+
+                    <article class="tarjeta-info">
+                        <h3>Consejo</h3>
+                        <p>
+                            Observa las rutas disponibles, no te encierres con tus bombas y
+                            administra el tiempo restante de cada nivel.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="creditos">
+                    <h3>Créditos</h3>
+                    <p><strong>Desarrollado por:</strong></p>
+                    <p>David Domínguez</p>
+                    <p>Yenni Lopez</p>
+                    <p>Samuel Pantaleon</p>
+                    <p>Proyecto académico de desarrollo web.</p>
+                </div>
+
+                <button id="botonVolverMenu" type="button">Volver al menú</button>
+            </div>
+        </section>
+
+        <!-- RESULTADOS Y ESTADÍSTICAS -->
+        <section id="pantallaResultados" class="pantalla oculto">
+            <div class="panel-menu panel-resultados">
+                <h2>Resultados</h2>
+
+                <p id="estadoResultados">Preparando estadísticas...</p>
+
+                <div class="resumen-resultados">
+                    <article>
+                        <span>Partidas</span>
+                        <strong id="totalPartidas">0</strong>
+                    </article>
+                    <article>
+                        <span>Mejor puntuación</span>
+                        <strong id="mejorPuntuacion">0</strong>
+                    </article>
+                    <article>
+                        <span>Nivel máximo</span>
+                        <strong id="mejorNivel">0</strong>
+                    </article>
+                    <article>
+                        <span>Mayor cadena</span>
+                        <strong id="mejorCadena">0</strong>
+                    </article>
+                </div>
+
+                <div class="contenedor-tabla">
+                    <table class="tabla-resultados">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Puntos</th>
+                                <th>Nivel</th>
+                                <th>Enemigos</th>
+                                <th>Duración</th>
+                                <th>Cadena</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoResultados"></tbody>
+                    </table>
+                </div>
+
+                <div class="grupo-botones">
+                    <button id="botonActualizarResultados" type="button">
+                        Actualizar resultados
+                    </button>
+                    <button id="botonVolverResultados" class="boton-secundario" type="button">
+                        Volver al menú
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANTALLA DE PAUSA -->
+        <section id="pantallaPausa" class="pantalla oculto">
+            <div class="panel-menu panel-pequeno">
+                <h2>Juego en pausa</h2>
+                <p>La partida y el temporizador están detenidos.</p>
+                <p>Presiona <kbd>M</kbd> para activar o silenciar el audio.</p>
+                <div class="grupo-botones">
+                    <button id="botonContinuar" type="button">Continuar</button>
+                    <button id="botonMenuPrincipal" class="boton-secundario" type="button">
+                        Regresar al menú principal
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIVEL COMPLETADO -->
+        <section id="pantallaNivel" class="pantalla oculto">
+            <div class="panel-menu panel-pequeno">
+                <h2>Nivel completado</h2>
+                <p id="mensajeNivel">Preparando el siguiente nivel...</p>
+                <button id="botonSiguienteNivel" type="button">Siguiente nivel</button>
+            </div>
+        </section>
+
+        <!-- PANTALLA FINAL -->
+        <section id="pantallaFinal" class="pantalla oculto">
+            <div class="panel-menu panel-pequeno">
+                <h2 id="tituloFinal">Fin del juego</h2>
+                <p id="mensajeFinal">Puntuación final: 0</p>
+                <button id="botonReiniciar" type="button">Jugar de nuevo</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/map.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/bomb.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/enemyBFS.js"></script>
+    <script src="js/enemyAStar.js"></script>
+    <script src="js/enemyPredictive.js"></script>
+    <script src="js/powerup.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/audio.js"></script>
+</body>
+</html>
